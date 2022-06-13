@@ -1,0 +1,183 @@
+from tkinter import *
+import cv2
+import pyttsx3
+top=Tk()
+f=Frame(top)
+f.pack(side=LEFT)
+def h21():
+    engine = pyttsx3.init()
+
+    # say method on the engine that passing input text to be spoken
+    engine.setProperty('rate', 120)
+    engine.say(' Pless Press Open Orel to get the Sound Of Letters')
+
+    # run and wait method, it processes the voice commands.
+    engine.runAndWait()
+    b9=Button(top,text="Welcome").place(x=100,y=250)
+
+
+def n1():
+    def n3():
+        engine = pyttsx3.init()
+
+        # say method on the engine that passing input text to be spoken
+        engine.setProperty('rate', 120)
+        engine.say('A for Apple')
+
+        # run and wait method, it processes the voice commands.
+        engine.runAndWait()
+    def n4():
+        engine = pyttsx3.init()
+
+        # say method on the engine that passing input text to be spoken
+        engine.setProperty('rate', 120)
+        engine.say(' B for BAT')
+
+        # run and wait method, it processes the voice commands.
+        engine.runAndWait()
+
+    def n5():
+        engine = pyttsx3.init()
+
+        # say method on the engine that passing input text to be spoken
+        engine.setProperty('rate', 120)
+        engine.say(' C for CAT')
+
+        # run and wait method, it processes the voice commands.
+        engine.runAndWait()
+    def n6():
+        engine = pyttsx3.init()
+
+        # say method on the engine that passing input text to be spoken
+        engine.setProperty('rate', 120)
+        engine.say(' D for DOG')
+
+        # run and wait method, it processes the voice commands.
+        engine.runAndWait()
+    def n7():
+        engine = pyttsx3.init()
+
+        # say method on the engine that passing input text to be spoken
+        engine.setProperty('rate', 120)
+        engine.say(' E for EGG')
+
+        # run and wait method, it processes the voice commands.
+        engine.runAndWait()
+    def n8():
+        engine = pyttsx3.init()
+
+        # say method on the engine that passing input text to be spoken
+        engine.setProperty('rate', 120)
+        engine.say(' F for FROG')
+
+        # run and wait method, it processes the voice commands.
+        engine.runAndWait()
+
+    def n9():
+        engine = pyttsx3.init()
+
+        # say method on the engine that passing input text to be spoken
+        engine.setProperty('rate', 120)
+        engine.say(' G for GOAT')
+
+        # run and wait method, it processes the voice commands.
+        engine.runAndWait()
+
+    def n10():
+        engine = pyttsx3.init()
+
+        # say method on the engine that passing input text to be spoken
+        engine.setProperty('rate', 120)
+        engine.say(' H for Hourse')
+
+        # run and wait method, it processes the voice commands.
+        engine.runAndWait()
+
+    def n11():
+        engine = pyttsx3.init()
+
+        # say method on the engine that passing input text to be spoken
+        engine.setProperty('rate', 120)
+        engine.say(' I for IRON')
+
+        # run and wait method, it processes the voice commands.
+        engine.runAndWait()
+
+    def n12():
+        engine = pyttsx3.init()
+
+        # say method on the engine that passing input text to be spoken
+        engine.setProperty('rate', 120)
+        engine.say(' J for JAR')
+
+        # run and wait method, it processes the voice commands.
+        engine.runAndWait()
+
+    def n13():
+        engine = pyttsx3.init()
+
+        # say method on the engine that passing input text to be spoken
+        engine.setProperty('rate', 120)
+        engine.say(' K for Kite')
+
+        # run and wait method, it processes the voice commands.
+        engine.runAndWait()
+
+    def n14():
+        engine = pyttsx3.init()
+
+        # say method on the engine that passing input text to be spoken
+        engine.setProperty('rate', 120)
+        engine.say(' L for LIGHT')
+
+        # run and wait method, it processes the voice commands.
+        engine.runAndWait()
+    b1=Button(f,text="A",command=n3,width="8").grid(column=0)
+    b2=Button(f,text="B",command=n4,width="8").grid(column=0)
+    b3 = Button(f, text="C", command=n5, width="8").grid(column=0)
+    b4 = Button(f, text="D", command=n6, width="8").grid(column=0)
+    b5 = Button(f, text="E", command=n7, width="8").grid(column=0)
+    b6 = Button(f, text="F", command=n8, width="8").grid(column=0)
+    b7 = Button(f, text="G", command=n9, width="8").grid(column=0)
+    b8 = Button(f, text="H", command=n10, width="8").grid(column=0)
+    b9 = Button(f, text="I", command=n11, width="8").grid(column=0)
+    b10 = Button(f, text="J", command=n12, width="8").grid(column=0)
+    b11 = Button(f, text="K", command=n13, width="8").grid(column=0)
+    b12 = Button(f, text="L", command=n14, width="8").grid(column=0)
+
+
+def h34():
+    cap = cv2.VideoCapture(0)
+    while (1):
+        ret, frame = cap.read()
+        cv2.imshow('video', frame)
+        if (cv2.waitKey(1) & 0xff == ord('q')):
+            break;
+    cap.release()
+    cv2.destroyAllWindows()
+
+
+menubar = Menu(top)
+file=Menu(menubar,tearoff=0)
+file.add_command(label="OPEN ORAL",command=n1)
+file.add_command(label="SAVE")
+file.add_command(label="OUTPUT",command=h34)
+file.add_command(label="HELP",command=h21)
+
+menubar.add_cascade(label="File",menu=file)
+edit=Menu(menubar,tearoff=0)
+edit.add_command(label="UNDO")
+edit.add_command(label="settings")
+edit.add_command(label="save")
+edit.add_command(label="copy")
+edit.add_command(label="paste")
+menubar.add_cascade(label="EDIT",menu=edit)
+tools=Menu(menubar,tearoff=0)
+tools.add_command(label="CUT")
+tools.add_command(label="ZOOM")
+tools.add_command(label="NEW Page")
+tools.add_command(label="add")
+tools.add_command(label="delete")
+menubar.add_cascade(label="TOOLS",menu=tools)
+top.config(menu=menubar)
+top.mainloop()
